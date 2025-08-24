@@ -3,7 +3,7 @@ name: Deploy to AWS
 on:
   push:
     branches:
-      - main   # ← デプロイしたいブランチ
+      - main
 
 jobs:
   deploy:
@@ -29,7 +29,6 @@ jobs:
       - name: Build Next.js
         run: |
           npm run -w web build
-          npm run -w web export
 
       - name: Configure AWS credentials
         uses: aws-actions/configure-aws-credentials@v4
