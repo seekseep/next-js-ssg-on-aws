@@ -1,0 +1,21 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Sid": "ReadCdkBootstrapParams",
+      "Effect": "Allow",
+      "Action": ["ssm:GetParameter", "ssm:GetParameters", "ssm:GetParameterHistory"],
+      "Resource": "arn:aws:ssm:ap-northeast-1:AWS_ACCOUNT:parameter/cdk-bootstrap/*"
+    },
+    {
+      "Sid": "AssumeCdkRoles",
+      "Effect": "Allow",
+      "Action": "sts:AssumeRole",
+      "Resource": [
+        "arn:aws:iam::AWS_ACCOUNT:role/cdk-hnb659fds-deploy-role-AWS_ACCOUNT-ap-northeast-1",
+        "arn:aws:iam::AWS_ACCOUNT:role/cdk-hnb659fds-file-publishing-role-AWS_ACCOUNT-ap-northeast-1",
+        "arn:aws:iam::AWS_ACCOUNT:role/cdk-hnb659fds-lookup-role-AWS_ACCOUNT-ap-northeast-1"
+      ]
+    }
+  ]
+}
