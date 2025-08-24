@@ -1,0 +1,7 @@
+{
+  "name": "next-js-ssg-on-aws",
+  "private": true,
+  "workspaces": [
+    "packages/*"
+  ]
+}
