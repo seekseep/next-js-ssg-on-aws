@@ -1,0 +1,16 @@
+FROM node:22-bullseye-slim
+
+WORKDIR /app
+
+# 依存だけ先にコピーして install
+COPY package.json package-lock.json ./
+COPY packages/web/package.json ./packages/web/
+RUN npm ci --workspaces --include-workspace-root
+
+# ソースをコピー
+COPY . .
+
+WORKDIR /app/packages/web
+
+# dev server 起動
+CMD ["npm", "run", "dev"]
