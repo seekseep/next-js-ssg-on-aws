@@ -28,7 +28,7 @@ jobs:
 
       - name: Build Next.js
         run: |
-          npm run -w packages/web build
+          npm run -w web build
 
       - name: Configure AWS credentials
         uses: aws-actions/configure-aws-credentials@v4
